@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="{url_for('static', filename='css/style.css')}"/>
+</head>
+<body>
+{% extends "base.html" %}
+
+{% block content %}
+<div>
+    <h4>Фамилия: {{ dict["surname"]}}</h4>
+    <h4>Имя: {{ dict["name"]}}</h4>
+    <h4>Образование: {{ dict["education"]}}</h4>
+    <h4>Профессия: {{ dict["profession"]}}</h4>
+    <h4>Пол: {{ dict["sex"]}}</h4>
+    <h4>Мотивация: {{ dict["motivation"]}}</h4>
+    <h4>Готовы остаться на Марсе?: {{ dict["ready"]}}</h4>
+</div>
+{% endblock %}
+</body>
+</html>

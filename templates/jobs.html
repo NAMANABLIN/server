@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="static/css/def.css">
+</head>
+<body>
+{% extends "base.html" %}
+
+{% block content %}
+<h2 align="center">Works Log</h2>
+{% for item in jobs%}
+<div class="aaa">
+    <h2>Action # {{item.id}}</h2>
+    <table border="2" width="100%">
+        <tr class="bg-secondary">
+            <th width="430"><h5>Title of activity</h5></th>
+            <th width="140"><h5>Team leader</h5></th>
+            <th width="100"><h5>Duration</h5></th>
+            <th width="180"><h5>List of collaborators</h5></th>
+            <th width="90"><h5>Is finished</h5></th>
+        </tr>
+        <tr>
+            <th><h5>{{item.job}}</h5></th>
+            <th><h5>{{users[item.team_leader - 1].surname}} {{users[item.team_leader - 1].name}}</h5></th>
+            <th><h5>{{item.work_size}} hours</h5></th>
+            <th><h5 align="center">{{item.collaborators}}</h5></th>
+            {% set finish = item.is_finished %}
+            {% if finish == 0 %}
+                <th class="bg-danger"><h5>Is not finished</h5></th>
+            {% else %}
+                <th class="bg-success"><h5>Is finished</h5></th>
+            {% endif %}
+        </tr>
+    </table>
+</div>
+{% endfor %}
+{% endblock %}
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="static/css/def.css">
+</head>
+<body>
+{% extends "base.html" %}
+
+{% block content %}
+<div>
+    <p class="fig">
+        <img src="static/img/MARS-2-7.png" width="200" height="60" alt="Иллюстрация">
+        Аварийный доступ
+    </p>
+    <form class="login_form" method="post">
+        <h4>Id астронавта</h4>
+        <input class="form-control" id="id_astronaut" name="id_astronaut">
+        <h4>Пароль астронавта</h4>
+        <input class="form-control" id="password_astronaut" name="password_astronaut">
+        <h4>Id астронавта</h4>
+        <input class="form-control" id="id_captain" name="id_captain">
+        <h4>Пароль астронавта</h4>
+        <input class="form-control" id="password_captain" name="password_captain">
+        <button type="submit" class="btn btn-primary">Доступ</button>
+    </form>
+</div>
+{% endblock %}
+</body>
+</html>

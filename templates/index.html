@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+</head>
+<body>
+    {% extends "base.html" %}
+
+    {% block content %}
+        <div align="center">
+            {% if prof == "инженер" or prof == "строитель" %}
+                <h1>Инженерные тренажеры</h1>
+                <img src="{{url_for('static', filename='img/инженер.jpg')}}"
+                alt="здесь должна была быть картинка, но не нашлась">
+            {% else %}
+                <h1>Научные симуляторы</h1>
+                <img src="{{url_for('static', filename='img/врач.jpg')}}"
+                alt="здесь должна была быть картинка, но не нашлась">
+            {% endif %}
+        </div>
+    {% endblock %}
+</body>
+</html>
