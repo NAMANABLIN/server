@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{% extends "base.html" %}
+
+{% block content %}
+<div>
+    <p class="fig">
+        <img src="static/img/MARS-2-7.png" width="200" height="60" alt="Иллюстрация">
+        Аварийный доступ
+    </p>
+    <form class="register_form" method="post">
+        <h4>Login / email</h4>
+        <input class="form-control" id="email" name="id_astronaut">
+        <h4>Password</h4>
+        <input class="form-control" id="password" name="password_astronaut">
+        <h4>Repeat password</h4>
+        <input class="form-control" id="repeat_password" name="id_captain">
+        <h4>Surname</h4>
+        <input class="form-control" id="surname" name="password_captain">
+        <h4>Name</h4>
+        <input class="form-control" id="name" name="password_captain">
+        <h4>Age</h4>
+        <input class="form-control" id="age" name="password_captain">
+        <h4>Position</h4>
+        <input class="form-control" id="position" name="password_captain">
+        <h4>Speciality</h4>
+        <input class="form-control" id="speciality" name="password_captain">
+        <h4>Address</h4>
+        <input class="form-control" id="address" name="password_captain">
+        <button type="submit" class="btn btn-primary">Доступ</button>
+    </form>
+</div>
+{% endblock %}
+</body>
+</html>
