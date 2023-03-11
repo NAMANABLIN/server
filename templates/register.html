@@ -2,39 +2,98 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
 </head>
 <body>
 {% extends "base.html" %}
 
 {% block content %}
-<div>
-    <p class="fig">
-        <img src="static/img/MARS-2-7.png" width="200" height="60" alt="Иллюстрация">
-        Аварийный доступ
+<h1>Регистрация</h1>
+<form action="" method="post">
+    {{ form.hidden_tag() }}
+    <p>
+        {{ form.email.label }}<br>
+        {{ form.email(class="form-control", type="email") }}<br>
+        {% for error in form.email.errors %}
+    <p class="alert alert-danger" role="alert">
+        {{ error }}
     </p>
-    <form class="register_form" method="post">
-        <h4>Login / email</h4>
-        <input class="form-control" id="email" name="id_astronaut">
-        <h4>Password</h4>
-        <input class="form-control" id="password" name="password_astronaut">
-        <h4>Repeat password</h4>
-        <input class="form-control" id="repeat_password" name="id_captain">
-        <h4>Surname</h4>
-        <input class="form-control" id="surname" name="password_captain">
-        <h4>Name</h4>
-        <input class="form-control" id="name" name="password_captain">
-        <h4>Age</h4>
-        <input class="form-control" id="age" name="password_captain">
-        <h4>Position</h4>
-        <input class="form-control" id="position" name="password_captain">
-        <h4>Speciality</h4>
-        <input class="form-control" id="speciality" name="password_captain">
-        <h4>Address</h4>
-        <input class="form-control" id="address" name="password_captain">
-        <button type="submit" class="btn btn-primary">Доступ</button>
-    </form>
-</div>
+    {% endfor %}
+    </p>
+    <p>
+        {{ form.password.label }}<br>
+        {{ form.password(class="form-control", type="password") }}<br>
+        {% for error in form.password.errors %}
+    <p class="alert alert-danger" role="alert">
+        {{ error }}
+    </p>
+    {% endfor %}
+    </p>
+    <p>
+        {{ form.password_again.label }}<br>
+        {{ form.password_again(class="form-control", type="password") }}<br>
+        {% for error in form.password_again.errors %}
+    <p class="alert alert-danger" role="alert">
+        {{ error }}
+    </p>
+    {% endfor %}
+    </p>
+    <p>
+        {{ form.surname.label }}<br>
+        {{ form.surname(class="form-control") }}<br>
+        {% for error in form.surname.errors %}
+    <p class="alert alert-danger" role="alert">
+        {{ error }}
+    </p>
+    {% endfor %}
+    </p>
+    <p>
+        {{ form.name.label }}<br>
+        {{ form.name(class="form-control") }}<br>
+        {% for error in form.name.errors %}
+    <p class="alert alert-danger" role="alert">
+        {{ error }}
+    </p>
+    {% endfor %}
+    </p>
+    <p>
+        {{ form.age.label }}<br>
+        {{ form.age(class="form-control") }}<br>
+        {% for error in form.age.errors %}
+    <p class="alert alert-danger" role="alert">
+        {{ error }}
+    </p>
+    {% endfor %}
+    </p>
+    <p>
+        {{ form.pos.label }}<br>
+        {{ form.pos(class="form-control") }}<br>
+        {% for error in form.pos.errors %}
+    <p class="alert alert-danger" role="alert">
+        {{ error }}
+    </p>
+    {% endfor %}
+    </p>
+    <p>
+        {{ form.spec.label }}<br>
+        {{ form.spec(class="form-control") }}<br>
+        {% for error in form.spec.errors %}
+    <p class="alert alert-danger" role="alert">
+        {{ error }}
+    </p>
+    {% endfor %}
+    </p>
+    <p>
+        {{ form.address.label }}<br>
+        {{ form.address(class="form-control") }}<br>
+        {% for error in form.address.errors %}
+    <p class="alert alert-danger" role="alert">
+        {{ error }}
+    </p>
+    {% endfor %}
+    </p>
+    <p>{{ form.submit(type="submit", class="btn btn-primary") }}</p>
+    {{message}}
+</form>
 {% endblock %}
 </body>
 </html>
